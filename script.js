@@ -30,9 +30,10 @@ document.querySelectorAll('.copy-btn').forEach(copy => {
 });
 
 // call Functionality for Emergency
-
-document.querySelectorAll('.call-btn').forEach(call => {
-  call.addEventListener('click', function (e) {
+const historyData = [];
+document
+  .getElementById('call-btn-emergency')
+  .addEventListener('click', function (e) {
     e.preventDefault();
 
     console.log('Calling');
@@ -47,13 +48,20 @@ document.querySelectorAll('.call-btn').forEach(call => {
     console.log(emergencyTitle, emergencyNumber);
 
     if (availableCoin >= 20) {
-      alert(`Calling ${emergencyTitle} ${emergencyNumber}`);
+      alert(`Calling ${emergencyTitle}: ${emergencyNumber}`);
       coinCounter.innerText = availableCoin - 20;
     } else {
       alert(' Not enough coins');
     }
+    const data = {
+      name: 'National Emergency Number',
+      number: '999',
+      date: new Date().toLocaleTimeString(),
+    };
+
+    historyData.push(data);
+    console.log(historyData);
   });
-});
 
 // call Functionality for Police
 document
@@ -72,7 +80,7 @@ document
     console.log(policeTitle, policeNumber, availableCoin);
 
     if (availableCoin >= 20) {
-      alert(`Calling ${policeTitle} ${policeNumber}`);
+      alert(`Calling ${policeTitle}: ${policeNumber}`);
       coinCounter.innerText = availableCoin - 20;
     } else {
       alert(' Not enough coins ');
@@ -92,7 +100,7 @@ document
     const fireNumber = document.getElementById('fire-number').innerText;
 
     if (availableCoin >= 20) {
-      alert(`Calling ${fireTitle} ${fireNumber}`);
+      alert(`Calling ${fireTitle}: ${fireNumber}`);
       coinCounter.innerText = availableCoin - 20;
     } else {
       alert('Not enough coins');
@@ -113,7 +121,7 @@ document
       document.getElementById('ambulance-number').innerText;
 
     if (availableCoin >= 20) {
-      alert(`Calling ${ambulanceTitle} ${ambulanceNumber}`);
+      alert(`Calling ${ambulanceTitle}: ${ambulanceNumber}`);
       coinCounter.innerText = availableCoin - 20;
     } else {
       alert('Not enough coins');
@@ -133,7 +141,7 @@ document
     const womanNumber = document.getElementById('woman-number').innerText;
 
     if (availableCoin >= 20) {
-      alert(`Calling ${womanTitle} ${womanNumber}`);
+      alert(`Calling ${womanTitle}: ${womanNumber}`);
       coinCounter.innerText = availableCoin - 20;
     } else {
       alert('Not enough coins');
@@ -159,3 +167,5 @@ document
       alert('Not enough coins');
     }
   });
+// History Functionality
+// const historyData = []
