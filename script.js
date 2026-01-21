@@ -79,28 +79,25 @@ document
     }
   });
 
-
 // call Functionality for Fire Service
-  document
-    .getElementById('call-btn-fire')
-    .addEventListener('click', function (e) {
-      e.preventDefault();
+document
+  .getElementById('call-btn-fire')
+  .addEventListener('click', function (e) {
+    e.preventDefault();
 
-      const coinCounter = document.getElementById('coin-counter');
-      const availableCoin = Number(coinCounter.innerText);
+    const coinCounter = document.getElementById('coin-counter');
+    const availableCoin = Number(coinCounter.innerText);
 
-      const fireTitle = document.getElementById('fire-title').innerText;
-      const fireNumber = document.getElementById('fire-number').innerText;
+    const fireTitle = document.getElementById('fire-title').innerText;
+    const fireNumber = document.getElementById('fire-number').innerText;
 
-      if (availableCoin >= 20) {
-        alert(`Calling ${fireTitle} ${fireNumber}`);
-        coinCounter.innerText = availableCoin - 20;
-      } else {
-        alert('Not enough coins');
-      }
-    });
-
-
+    if (availableCoin >= 20) {
+      alert(`Calling ${fireTitle} ${fireNumber}`);
+      coinCounter.innerText = availableCoin - 20;
+    } else {
+      alert('Not enough coins');
+    }
+  });
 
 // call Functionality for Ambulance Service
 document
@@ -112,7 +109,8 @@ document
     const availableCoin = Number(coinCounter.innerText);
 
     const ambulanceTitle = document.getElementById('ambulance-title').innerText;
-    const ambulanceNumber = document.getElementById('ambulance-number').innerText;
+    const ambulanceNumber =
+      document.getElementById('ambulance-number').innerText;
 
     if (availableCoin >= 20) {
       alert(`Calling ${ambulanceTitle} ${ambulanceNumber}`);
@@ -121,7 +119,6 @@ document
       alert('Not enough coins');
     }
   });
-
 
 // call Functionality for Woman Child Helpline
 document
@@ -142,8 +139,6 @@ document
       alert('Not enough coins');
     }
   });
-
-
 
 // call Functionality for Anti Corruption Helpline
 document
